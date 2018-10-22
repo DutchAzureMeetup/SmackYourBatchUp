@@ -55,8 +55,8 @@ This hands-on lab includes the following exercises:
 		- [Resources](#resources)
 	- [Exercises](#exercises)
 	- [Exercise 1: Create a Batch account](#exercise-1-create-a-batch-account)
-	- [Exercise 2: Configure Batch Shipyard](#exercise-2-configure-batch-shipyard)
-	- [Exercise 3: Open the Cloud Shell](#exercise-3-open-the-cloud-shell)
+	- [Exercise 2: Open the Cloud Shell](#exercise-2-open-the-cloud-shell)
+	- [Exercise 3: Configure Batch Shipyard](#exercise-3-configure-batch-shipyard)
 	- [Exercise 4: Create a pool](#exercise-4-create-a-pool)
 	- [Exercise 5: Upload input files](#exercise-5-upload-input-files)
 	- [Exercise 6: Run the job](#exercise-6-run-the-job)
@@ -79,7 +79,7 @@ Azure Batch accounts can be created through the Azure Portal. In this exercise, 
 
 	_Creating a Batch service_
 
-1. In the "New Batch account" blade, give the account a unique name such as "batchservicelab" and make sure a green check mark appears next to it. (You can only use numbers and lowercase letters since the name becomes part of a DNS name.) Select **Create new** under **Resource group** and name the resource group "BatchResourceGroup." Select the **Location** nearest you, and then click **Select a storage account**.
+1. In the "New Batch account" blade, give the account a **unique** name such as "batchservicelab" and make sure a green check mark appears next to it. (You can only use numbers and lowercase letters since the name becomes part of a DNS name.) Select **Create new** under **Resource group** and name the resource group "BatchResourceGroup." Select the **Location** nearest you, and then click **Select a storage account**.
 
 	![Entering Batch account parameters](Images/batch-parameters.png)
 
@@ -91,7 +91,7 @@ Azure Batch accounts can be created through the Azure Portal. In this exercise, 
 
 	_Creating a new storage account_
 
-1. Enter a unique name for the storage account and make sure a green check mark appears next to it. Then set **Replication** to **Locally-redundant Storage (LRS)** and click **OK** at the bottom of the blade.
+1. Enter a **unique** name for the storage account and make sure a green check mark appears next to it. Then set **Replication** to **Locally-redundant Storage (LRS)** and click **OK** at the bottom of the blade.
 
 	> Storage account names can be 3 to 24 characters in length and can only contain numbers and lowercase letters. In addition, the name you enter must be unique within Azure; if someone else has chosen the same name, you'll be notified that the name isn't available with a red exclamation mark in the **Name** field.
 
@@ -118,7 +118,14 @@ Azure Batch accounts can be created through the Azure Portal. In this exercise, 
     _Viewing the deployment status_
 
 <a id="Exercise2"/></a>
-## Exercise 2: Configure Batch Shipyard ##
+## Exercise 2: Open the Cloud Shell ##
+
+1. In the Azure Portal go to the upper right side and open the Cloud Shell 
+
+    ![Opening the Cloud Shell](Images/cloudshell.png)
+
+<a id="Exercise3"/></a>
+## Exercise 3: Configure Batch Shipyard ##
 
 Batch Shipyard uses YAML files named **config.yaml, pool.yaml,  jobs.yaml**, and **credentials.yaml** to configure the environment. These four files, the Dockerfiles used to build Docker images, the files referenced in the Dockerfiles, and a **readme.md** file define a Batch Shipyard "recipe."
 
@@ -126,11 +133,28 @@ Each of the configuration files in a recipe configures one element of Batch Ship
 
 In this exercise, you will modify **credentials.yaml** and **jobs.yaml** so they can be used in a Batch job. Rather than create a Dockerfile, you will use one that has been created for you. To learn more about Dockerfiles, refer to https://docs.docker.com/engine/getstarted/step_four/.
 
-1. Open the resources that accompany this lab, and then copy the "recipe" folder into the "batch-shipyard" folder created in the previous exercise.
+1. In the CLoud Shell (Using Bash) create a directory called "dutchazuremeeeutp" en go to this directory:
+```
+mkdir dutchazuremeetup
 
-1. Open the copied "recipe" folder. Open the "config" folder in that folder, and then open the file named **credentials.yaml** in your favorite text editor. There are two sections in the file: "batch" and "storage." The "batch" section contains the settings for the Batch account that Batch Shipyard will use. The "storage" section contains the settings Batch Shipyard will use to access the storage account created for the Batch account.
+cd dutchazuremeetup
+```
 
-1. Return to the Azure Portal and to the "BatchResourceGroup" resource group created for the batch account in [Exercise 1](#Exercise`). In the resource group, click the Batch account.
+2. Now clone in here this repo: 
+```
+git clone XXX
+```
+
+3. Go to the folder "SmackYourBatchUp", then the folder "resources" and then to the folder "recipe"
+
+4. Open the Cloud Shell Editor (don't forget the dot at the end): 
+   ```
+   code . 
+   ```
+
+5.From the Cloud Shell Editor open the "config" folder in that folder, and then open the file named **credentials.yaml** . There are two sections in the file: "batch" and "storage." The "batch" section contains the settings for the Batch account that Batch Shipyard will use. The "storage" section contains the settings Batch Shipyard will use to access the storage account created for the Batch account.
+
+3. In the Azure Portal and to the "BatchResourceGroup" resource group created for the batch account in [Exercise 1](#Exercise`). In the resource group, click the Batch account.
 
 	![Opening the batch account](Images/open-batch-account.png)
 
@@ -155,7 +179,7 @@ In this exercise, you will modify **credentials.yaml** and **jobs.yaml** so they
 	```yaml
 	batch:
 	    account_key: ghS8vZrI+5TvmcdRoILz...7XBuvRIA6HFzCaMsPTsXToKdQtWeg==
-	    account_service_url: "https://batchservicelab.eastus.batch.azure.com
+	    account_service_url: "https://batchservicelab.westeurope.batch.azure.com
 	```
 
 1. In the Azure Portal, return to the "BatchResourceGroup" resource group and click the storage account in that resource group.
@@ -178,7 +202,7 @@ In this exercise, you will modify **credentials.yaml** and **jobs.yaml** so they
 
 	_Copying the storage account key_
 
-1. In **credentials.yaml**, replace STORAGE_ACCOUNT_KEY with the key that is on the clipboard, and then save the file. The "storage" section of **credentials.yaml** should now look something like this:
+1. In **credentials.yaml**, replace STORAGE_ACCOUNT_KEY with the key that is on the clipboard, and then save (CTRL + S) the file. The "storage" section of **credentials.yaml** should now look something like this:
 
 	```yaml
 	storage:
@@ -194,14 +218,9 @@ In this exercise, you will modify **credentials.yaml** and **jobs.yaml** so they
 
 	_Copying the storage account connection string_
 
-1. Open **jobs.yaml** and replace STORAGE_ACCOUNT_CONNECTION_STRING with the connection string that is on the clipboard. Then save the file. 
+1. Open **jobs.yaml** and replace STORAGE_ACCOUNT_CONNECTION_STRING with the connection string that is on the clipboard. Then save (CTRL + S) the file. 
 
 **credentials.yaml** and **jobs.yaml** now contain connection information for the Batch account and the storage account. The next step is to use another of the YAML files to create a compute pool.
-
-
-<a id="Exercise3"/></a>
-## Exercise 3: Open the Cloud Shell ##
-
 
 <a id="Exercise4"/></a>
 ## Exercise 4: Create a pool ##
@@ -210,10 +229,10 @@ Before you run the job, you must create a compute pool using the configuration s
 
 > The **pool.yaml** file provided for you configures each pool to have two VMs and specifies a VM size of STANDARD_A1, which contains a single core and 1.75 GB of RAM. In real life, you might find it advantageous to use larger VMs with more cores and more RAM, or to increase the number of VMs by increasing the *vm_count* property in **pool.yaml**.
 
-1. In the terminal or Command Prompt window that you left open, run one of the following commands based on which operating system you are using:
+1. In the Cloud Shell window that you left open, run the following command:
 
 	````
-	shipyard pool add --configdir .\recipe\config
+	shipyard pool add --configdir config
 	````
 
 This command will take a few minutes to complete. Batch Shipyard is creating virtual machines using Azure Batch, and then provisioning those virtual machines with Docker. You don't have to wait for the provisioning to complete, however, before proceeding to the next exercise.
@@ -284,11 +303,11 @@ The container is configured to handle multiple text files with a .txt extension.
 
 Now that Batch Shipyard is configured, the pool is created, and the input data is uploaded, it's time to run the job.
 
-1. Return to the terminal or Command Prompt window and execute one of the following commands based on which operating system you are using. This command creates a job if it doesn't already exist in the Batch account, and then creates a new task for that job. Jobs can be run multiple times without creating new jobs. Batch Shipyard simply creates a new task each time the **jobs add** command is called.
+1. Return to the Cloud Shell Prompt window and execute the following command. This command creates a job if it doesn't already exist in the Batch account, and then creates a new task for that job. Jobs can be run multiple times without creating new jobs. Batch Shipyard simply creates a new task each time the **jobs add** command is called.
 
 
 	````
-	shipyard jobs add --configdir .\recipe\config
+	shipyard jobs add --configdir config
 	````
 
 
