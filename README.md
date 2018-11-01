@@ -18,10 +18,6 @@ The workflow for using Batch Shipyard with Azure Batch is pictured below. After 
 
 _Azure Batch Shipyard workflow_
 
-In this lab, you will use Azure Batch and Batch Shipyard to process a set of text files containing chapters from a famous novel and generate .ogg sound files from the text files.
-
-**Note**: This lab requires an Internet connection with a minimum upload speed of approximately 1 MB/sec or higher. If you don't have that, or if the lab fails in Exercise 6, try creating a Windows VM in Azure and working the lab in the VM. You will find instructions for creating a Windows VM in Azure at https://docs.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-portal.
-
 <a name="Objectives"></a>
 ### Objectives ###
 
