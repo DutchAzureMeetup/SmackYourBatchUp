@@ -129,7 +129,7 @@ Each of the configuration files in a recipe configures one element of Batch Ship
 
 In this exercise, you will modify **credentials.yaml** and **jobs.yaml** so they can be used in a Batch job. Rather than create a Dockerfile, you will use one that has been created for you. To learn more about Dockerfiles, refer to https://docs.docker.com/engine/getstarted/step_four/.
 
-1. In the CLoud Shell (Using Bash) create a directory called "dutchazuremeeeutp" en go to this directory:
+1. In the Cloud Shell (using Bash) create a directory called "dutchazuremeeeutp" en go to this directory:
 ```
 mkdir dutchazuremeetup
 
