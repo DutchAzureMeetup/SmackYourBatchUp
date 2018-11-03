@@ -112,8 +112,7 @@ Azure Batch accounts can be created through the Azure Portal. In this exercise, 
 
 	_Creating a Batch account_
 
-
-1. Wait until "Deploying" changes to "Succeeded," indicating that the Batch account and the storage account have been deployed. You can click the **Refresh** button at the top of the blade to refresh the deployment status.
+1. Wait until "Deploying" status changes to "OK", indicating that the Batch account and the storage account have been deployed. You can click the **Refresh** button at the top of the blade to refresh the deployment status.
 
     ![Viewing the deployment status](Images/setup-azure-batch-8.png)
 
