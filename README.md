@@ -100,7 +100,7 @@ Azure Batch accounts can be created through the Azure Portal. In this exercise, 
 
 	_Creating a new storage account_
 
-1. Click on **Review + create** 
+1. Click on **Review + create** button at the bottom of the "New Batch account" blade
 
 	![Creating a new storage account](Images/setup-azure-batch-6.png)
 
@@ -108,21 +108,22 @@ Azure Batch accounts can be created through the Azure Portal. In this exercise, 
 
 1. Click the **Create** button at the bottom of the "New Batch account" blade to start the deployment
 
-	![Creating a Batch account](Images/create-batch-account.png)
+	![Creating a Batch account](Images/setup-azure-batch-7.png)
 
 	_Creating a Batch account_
+
+
+1. Wait until "Deploying" changes to "Succeeded," indicating that the Batch account and the storage account have been deployed. You can click the **Refresh** button at the top of the blade to refresh the deployment status.
+
+    ![Viewing the deployment status](Images/setup-azure-batch-8.png)
+
+    _Viewing the deployment status_
 
 1. Click **Resource groups** in the ribbon on the left side of the portal, and then click the resource group created for the Batch account.
  
     ![Opening the resource group](Images/open-resource-group.png)
 
     _Opening the resource group_
-
-1. Wait until "Deploying" changes to "Succeeded," indicating that the Batch account and the storage account have been deployed. You can click the **Refresh** button at the top of the blade to refresh the deployment status.
-
-    ![Viewing the deployment status](Images/deployment-status.png)
-
-    _Viewing the deployment status_
 
 <a id="Exercise2"/></a>
 ## Exercise 2: Open the Cloud Shell ##
