@@ -92,7 +92,7 @@ Azure Batch accounts can be created through the Azure Portal. In this exercise, 
 	_Entering Batch account parameters_
 
 1. Click **Create new** to create a new storage account for the Batch service.
-   Enter a **unique** name for the storage account and make sure a green check mark appears next to it. Then set Account Kind to **Storage (general purpose v1)**,  **Replication** to **Locally-redundant Storage (LRS)** and click **OK** at the bottom of the blade.
+   Enter a **unique** name for the storage account and make sure a green check mark appears next to it. Then set Account Kind to **StorageV2 (general purpose v2)**,  **Replication** to **Locally-redundant Storage (LRS)** and click **OK** at the bottom of the blade.
 
 	> Storage account names can be 3 to 24 characters in length and can only contain numbers and lowercase letters. In addition, the name you enter must be unique within Azure; if someone else has chosen the same name, you'll be notified that the name isn't available with a red exclamation mark in the **Name** field.
 
