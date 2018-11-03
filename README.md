@@ -75,9 +75,13 @@ Azure Batch accounts can be created through the Azure Portal. In this exercise, 
 
 	_Creating a Batch service_
 
-1. In the "New Batch account" blade, give the account a **unique** name such as "batchservicelab" and make sure a green check mark appears next to it. (You can only use numbers and lowercase letters since the name becomes part of a DNS name.) Select **Create new** under **Resource group** and name the resource group "BatchResourceGroup." Select the **Location** nearest you, and then click **Select a storage account**.
+1. In the "New Batch account" blade, Select **Create new** under **Resource group** and name the resource group "BatchResourceGroup."  
 
-	![Entering Batch account parameters](Images/batch-parameters.png)
+	![Entering Batch account parameters](Images/setup-azure-batch-2.png)
+
+1. Give the account a **unique** name such as "batchservicelab" and make sure a green check mark appears next to it. (You can only use numbers and lowercase letters since the name becomes part of a DNS name.) Select the **Location** nearest you, and then click **Next: Advanced**.
+
+	![Entering Batch account parameters](Images/setup-azure-batch-3.png)
 
 	_Entering Batch account parameters_
 
