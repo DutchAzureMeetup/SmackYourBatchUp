@@ -141,27 +141,25 @@ Each of the configuration files in a recipe configures one element of Batch Ship
 In this exercise, you will modify **credentials.yaml** and **jobs.yaml** so they can be used in a Batch job. Rather than create a Dockerfile, you will use one that has been created for you. To learn more about Dockerfiles, refer to https://docs.docker.com/engine/getstarted/step_four/.
 
 1. In the Cloud Shell (using Bash) create a directory called "dutchazuremeeeutp" and go to this directory:
-```
-mkdir dutchazuremeetup
+	```
+	mkdir dutchazuremeetup
 
-cd dutchazuremeetup
-```
+	cd dutchazuremeetup
+	```
 
-2. Now clone in here this repo: 
-```
-git clone XXX
-```
+1. Now clone in here this repo: 
+	```
+	git clone XXX
+	```
 
-3. Go to the folder "SmackYourBatchUp", then the folder "resources" and then to the folder "recipe"
+1. Go to the folder "SmackYourBatchUp", then the folder "resources" and then to the folder "recipe"
 
-4. Open the Cloud Shell Editor (**don't forget the dot at the end**): 
-   ```
-   code . 
-   ```
+1. Open the Cloud Shell Editor (**don't forget the dot at the end**): 
+	```
+	code . 
+	```
 
-5.From the Cloud Shell Editor open the "config" folder in that folder, and then open the file named **credentials.yaml** . There are two sections in the file: "batch" and "storage." The "batch" section contains the settings for the Batch account that Batch Shipyard will use. The "storage" section contains the settings Batch Shipyard will use to access the storage account created for the Batch account.
-
-3. In the Azure Portal and to the "BatchResourceGroup" resource group created for the batch account in [Exercise 1](#Exercise`). In the resource group, click the Batch account.
+5. In the Azure Portal and to the "BatchResourceGroup" resource group created for the batch account in [Exercise 1](#Exercise`). In the resource group, click the Batch account.
 
 	![Opening the batch account](Images/open-batch-account.png)
 
@@ -227,7 +225,7 @@ git clone XXX
 
 1. Open **jobs.yaml** and replace STORAGE_ACCOUNT_CONNECTION_STRING with the connection string that is on the clipboard. Then save (CTRL + S) the file. 
 
-**credentials.yaml** and **jobs.yaml** now contain connection information for the Batch account and the storage account. The next step is to use another of the YAML files to create a compute pool.
+> **credentials.yaml** and **jobs.yaml** now contain connection information for the Batch account and the storage account. The next step is to use another of the YAML files to create a compute pool.
 
 <a id="Exercise4"/></a>
 ## Exercise 4: Create a pool ##
@@ -242,7 +240,7 @@ Before you run the job, you must create a compute pool using the configuration s
 	shipyard pool add --configdir config
 	````
 
-This command will take a few minutes to complete. Batch Shipyard is creating virtual machines using Azure Batch, and then provisioning those virtual machines with Docker. You don't have to wait for the provisioning to complete, however, before proceeding to the next exercise.
+> This command will take a few minutes to complete. Batch Shipyard is creating virtual machines using Azure Batch, and then provisioning those virtual machines with Docker. You don't have to wait for the provisioning to complete, however, before proceeding to the next exercise.
 
 <a id="Exercise5"/></a>
 ## Exercise 5: Upload input files ##
