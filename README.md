@@ -149,7 +149,7 @@ In this exercise, you will modify **credentials.yaml** and **jobs.yaml** so they
 
 1. Now clone in here this repo: 
 	```
-	git clone XXX
+	git clone https://github.com/DutchAzureMeetup/SmackYourBatchUp.git
 	```
 
 1. Go to the folder "SmackYourBatchUp", then the folder "resources" and then to the folder "recipe"
