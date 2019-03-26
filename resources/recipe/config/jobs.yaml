@@ -5,5 +5,3 @@ job_specifications:
   tasks:
   - docker_image: blaize/text2ogg
     remove_container_after_exit: false
-  - docker_image: blaize/text2ogg
-    remove_container_after_exit: false
